@@ -13,7 +13,7 @@ export ICON=/usr/share/icons/hicolor/512x512/apps/org.fedoraproject.MediaWriter.
 export DESKTOP=/usr/share/applications/org.fedoraproject.MediaWriter.desktop
 
 # Deploy dependencies
-quick-sharun /usr/bin/mediawriter /usr/lib/mediawriter/helper
+quick-sharun /usr/bin/mediawriter /usr/lib/mediawriter /usr/lib/qt6/qml /usr/lib/qt6/plugins
 
 # Additional changes can be done in between here
 
