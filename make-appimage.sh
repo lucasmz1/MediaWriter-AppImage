@@ -3,8 +3,9 @@
 set -eu
 
 ARCH=$(uname -m)
-VERSION=$(pacman -Q PACKAGENAME | awk '{print $2; exit}') # example command to get version of application here
+VERSION=$(pacman -Q mediawriter | awk '{print $2; exit}') # example command to get version of application here
 export ARCH VERSION
+export DEPLOY_QT=1
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
@@ -12,7 +13,7 @@ export ICON=/usr/share/icons/hicolor/512x512/apps/org.fedoraproject.MediaWriter.
 export DESKTOP=/usr/share/applications/org.fedoraproject.MediaWriter.desktop
 
 # Deploy dependencies
-quick-sharun /usr/bin/mediawriter /usr/lib/mediawriter/helper /usr/lib/qt6
+quick-sharun /usr/bin/mediawriter /usr/lib/mediawriter/helper
 
 # Additional changes can be done in between here
 
