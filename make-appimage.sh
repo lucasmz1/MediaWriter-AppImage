@@ -4,7 +4,7 @@ set -eu
 
 ARCH=$(uname -m)
 VERSION=$(pacman -Q mediawriter | awk '{print $2; exit}') # example command to get version of application here
-install=$(pacman -S file binutils patchelf findutils grep sed coreutils strace)
+install=$(pacman -S file binutils patchelf findutils grep sed coreutils strace --noconfirm)
 export ARCH VERSION
 export DEPLOY_QT=1
 export OUTPATH=./dist
